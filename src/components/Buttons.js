@@ -140,6 +140,24 @@ function Buttons() {
         <Button fullWidth variant="outlined">Outlined Full Width</Button>
         <Button fullWidth variant="text">Text Full Width</Button>
       </div>
+      <div>
+        <hr />
+        <p>BUTTON SX</p>
+        <Button 
+        variant="contained" 
+        startIcon={<DeleteIcon />} 
+        size="small"
+        sx={{
+          backgroundColor: "blue",
+          color: "yellow",
+          "&:hover": { // & => Butonun kendisini temsil eder.
+            backgroundColor: "orange"
+          },
+          "& svg": {
+            color: "blueviolet"
+          }
+        }}>Contained sx</Button>
+      </div>
     </div>
   );
 }
@@ -158,4 +176,11 @@ disabled: Butonu devre dışı bırakır. Yani kullanıcı tıklayamaz.
 disableElevation: Butonun gölgesini (elevation) kapatır.
 
 component: Butonun davranış biçimini değiştirmeye yarar
+
+sx: MUI bileşenlerinde stil vermek için kullanılan özel bir prop'tur.
+İçine bir JavaScript nesnesi (object) yazılır.
+CSS özellikleri camelCase olarak yazılır.
+Temayla entegre çalışabilir (renkler, spacing, breakpoint vs.)
+
+&: & işareti, MUI'nin sx prop'unda kendini temsil eder. Yani bulunduğun bileşeni temsil etmektesin.
 */
